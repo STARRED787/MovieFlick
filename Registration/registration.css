@@ -1,0 +1,350 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    scroll-padding-top: 2rem;
+    scroll-behavior: smooth;
+   
+}
+
+:root{
+    --main-color:#ff2c1f;
+    --text-color:#020307;
+    --bg-color:#ffffff;
+}
+body{
+background: url('bg.jpg');
+background-repeat: no-repeat;
+background-size: cover;
+background-attachment: fixed;
+color: var(--bg-color);
+   
+}
+
+section{
+    padding: 4.5rem 0 1.5rem;
+}
+header{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 100px;
+    transition: 0.5s;
+    background: transparent;
+    font-family: 'Exo 2';
+}
+.logo{
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--bg-color);
+    align-items: center;
+    display: flex;
+    column-gap: 0.5rem;
+    font-family: 'Orbitron';
+}
+.logo .bx{
+    color: var(--main-color);
+    font-size: 30px;
+}
+.navibar{
+    display: flex;
+    column-gap: 5rem;
+}
+
+.navibar li {
+    position: relative;
+}
+
+.navibar a{
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--bg-color);
+}
+.navibar a::after{
+    content: "";
+    width: 0;
+    height: 4px;
+    background: var(--main-color);
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    transition: 0.40s all linear;
+    border-radius: 5px;
+}
+
+.navibar a:hover::after, .navibar .h-active::after {
+    width: 100%;
+}
+.btn{
+    padding: 0.7rem 1.4rem;
+    background: var(--main-color);
+    color: var(--bg-color);
+    font-weight: 400;
+    border-radius: 5px;
+}
+.btn:hover{
+    background: #ff1d1d;
+    box-shadow: 0 0 5px  whitesmoke;
+}
+
+/*----registration---*/
+
+.wrapper{
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(245, 245, 245, 0.288);
+    backdrop-filter: blur(15px);
+    padding: 0 40px;
+    margin-top: 4.5rem;
+    font-family: 'Exo 2';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 450px;
+    height: 88%;
+    background: transparent;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+.wrapper .logreg-box{
+    width: 100%;
+
+}
+.logreg-box .logreg-title{
+    text-align: center;
+    margin-bottom: 40px;
+    color: #ffffff;
+}
+.logreg-title h2{
+    font-size: 32px;
+   font-weight:50px;
+}
+
+.logreg-title p{
+font-size: 14px;
+font-weight: 500;
+}
+.logreg-box .input-box{
+    position: relative;
+    width: 100%;
+    height: 50px;
+    margin: 30px 0;
+    border-bottom: 2px solid whitesmoke;
+}
+
+.input-box input{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    color: rgb(0, 0, 0);
+    font-weight: 500;
+    padding: 25px ;
+}
+
+
+.input-box label{
+    position: absolute;
+    top: 40%;
+    left: 0;
+    font-size: 16px;
+    color: #fff;
+    font-weight: 500;
+    transform: translateY(-100%);
+    pointer-events: none;
+    color: #020307;
+    transition: .5s;
+}
+.input-box input:focus~label,
+.input-box input:focus~label,
+.input-box input:focus~label{
+    top: -5px;
+}
+.input-box .icon{
+position: absolute;
+top: 50%;
+right: 0;
+transform: rotateY(-50%);
+font-size: 19px;
+color: #020307;
+position: absolute;
+}
+.logreg-box .terms{
+    font-size: 14.5px;
+    color: #fff;
+    font-weight: 500;
+    margin-top: -1.2rem;
+}
+.submit input{
+margin-top: 0.5rem;    
+width: 100%;
+height: 45px; 
+background: #fff;
+border: none;
+outline: none;
+border-radius: 40px;
+box-shadow: 0 2px 5px rgba(0,0,0,.2);
+cursor: pointer;
+font-size: 16px;
+font-weight: 600;
+}
+.submit input:hover{
+    background-color: #ff000038;
+    color: rgb(245, 245, 245);
+}
+.al{
+    font-size: 14.5px;
+    color: #fff;
+    text-align: center;
+    margin-top: 1rem;
+    font-weight: 500;
+}
+.al a{
+    color: #ff0000;
+}
+.media-options{
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+.media-options a{
+    display: inline-flex;
+    width: 26rem;
+    height: 50px;
+    background: transparent;
+    border: 2px solid whitesmoke;
+    margin: 10px 0;
+    box-shadow: 0 2px  5px rgba(0,0,0,.2);
+    border-radius: 40px;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-decoration: none;
+    transition: .5s;
+}
+.media-options a:hover{
+    background: rgb(255,255,255,.1);
+}
+.media-options i{
+    font-size: 22px;
+    margin: 0 8px 1.5px 0;
+}
+.media-options a span{
+    font-size: 16px;
+    font-weight: 500;
+}
+.form-box p{
+    margin-top: 0.5rem;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+/*footer*/
+footer{
+    margin-top: 38rem;
+    width: 100%;
+    bottom: 0;
+    background: linear-gradient(to right, #00093cef,#ec1000d2);
+    color: #fff;
+    padding: 100 0 30px;
+    margin-left:0 5rem;
+    font-size: 13px;
+    line-height: 20px;
+    font-family: 'Exo 2';
+    border-radius: 1px;
+  
+}
+
+.row{
+    width: 85%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+.col{
+    flex-basis: 25%;
+    padding: 10px;
+}
+
+.col:nth-child(2), .col:nth-child(3){
+ flex-basis: 10%;   
+}
+.logo{
+    width: 150px;
+    margin-bottom: 30px;
+}
+.col h3{
+    width: fit-content;
+    margin-bottom: 10px;
+    position: relative;
+}
+.email-id{
+    width: fit-content;
+    border-bottom: 1px solid #ccc;
+    margin: 20px 0;
+}
+ul li{
+    list-style: none;
+    margin-bottom:12px;
+}
+ul li a{
+    text-decoration: none;
+    color: whitesmoke;
+}
+li .a:hover{
+    color: #ff1e1e;
+}
+hr{
+    width: 90%;
+    border: 0;
+    border-bottom: 1.6px solid #f8f8f8;
+    margin: 20px auto;
+}
+.copyright{
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: -1rem;
+}
+.underline{
+    width: 100%;
+    height: 5px;
+    background: #ffffff;
+    border-radius: 3px;
+    position: absolute;
+    top: 25px;
+    left: 0;
+    overflow: hidden;
+}
+.underline span{
+    width: 15px;
+    height: 100%;
+    background: #ff0000;
+    border-radius: 3px;
+    box-shadow: 0 0 1px white ;
+    position: absolute;
+    top: 0;
+    left: 10px;
+    animation: moving 2s linear infinite;  
+}
+@keyframes moving {
+    0%{
+        left: 0px;
+    }
+   100%{
+        left: 100px;
+    }
+    
+}

@@ -1,0 +1,456 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    scroll-padding-top: 2rem;
+    scroll-behavior: smooth;
+   
+}
+
+:root{
+    --main-color:#ff2c1f;
+    --text-color:#020307;
+    --bg-color:#ffffff;
+}
+body{
+background-image: url('bg.jpg');
+background-repeat: no-repeat;
+background-attachment: fixed;
+background-size: cover;
+color: var(--bg-color);  
+}
+header{
+
+    position: absolute;
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 100px;
+    transition: 0.5s;
+    background: transparent;
+    font-family: 'Exo 2';
+}
+.logo{
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--bg-color);
+    align-items: center;
+    display: flex;
+    column-gap: 0.5rem;
+    font-family: 'Orbitron';
+}
+.logo .bx{
+    color: var(--main-color);
+    font-size: 30px;
+}
+.navibar{
+    display: flex;
+    column-gap: 5rem;
+}
+
+.navibar li {
+    position: relative;
+}
+
+.navibar a{
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--bg-color);
+}
+.navibar a::after{
+    content: "";
+    width: 0;
+    height: 4px;
+    background: var(--main-color);
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    transition: 0.40s all linear;
+    border-radius: 5px;
+}
+
+.navibar a:hover::after, .navibar .h-active::after {
+    width: 100%;
+}
+.btn{
+    padding: 0.7rem 1.4rem;
+    background: var(--main-color);
+    color: var(--bg-color);
+    font-weight: 400;
+    border-radius: 5px;
+}
+.btn:hover{
+    background: #ff1d1d;
+    box-shadow: 0 0 5px  whitesmoke;
+}
+
+/*Login-----------------*/
+section{
+font-family: 'Exo 2';
+margin-left: 15rem;
+margin-top: 15rem;
+ display: flex;
+ justify-content: center;
+ min-height: 100vh;
+
+}
+.box{
+    margin-top: -5rem; 
+    position: relative;
+    width: 380px;
+    height: 450px;
+    background: #000000;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.box::before{       /*animateline*/
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 380px;
+    height: 420px;
+    transform-origin: bottom right;
+    background: linear-gradient(0deg, transparent,
+    transparent,#ff0062,#ff0062,#ff0062);
+    z-index: 1;
+    animation: animate 6s linear infinite;
+  
+}
+.box::after{       /*animateline*/
+
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 380px;
+    height: 420px;
+    transform-origin: bottom right;
+    background: linear-gradient(0deg, transparent,
+    transparent, #aeff45,#aeff45,#aeff45);
+    z-index: 1;
+    animation: animate 6s linear infinite;
+    animation-delay: -3s;
+}
+.border{
+    position: absolute;
+    top: 0;
+    inset: 0;
+}
+.border::after{       /*animateline*/
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 380px;
+    height: 420px;
+    transform-origin: bottom right;
+    background: linear-gradient(0deg, transparent,
+    transparent, #ff32b0,#ff32b0,#ff32b0);
+    z-index: 1;
+    animation: animate 6s linear infinite;
+    animation-delay: -1.5s;
+}
+.border::before{       /*animateline*/
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 380px;
+    height: 420px;
+    transform-origin: bottom right;
+    background: linear-gradient(0deg, transparent,
+    transparent, #45f3ff,#45f3ff,#45f3ff);
+    z-index: 1;
+    animation: animate 6s linear infinite;
+    animation-delay: -4.5s;
+}
+@keyframes animate {
+    0%{
+        transform:rotate(0deg);
+    }
+    100%{
+        transform:rotate(360deg);
+    }
+}
+.box form{
+    position: absolute;
+    inset: 5px;
+    background: #222;
+    padding: 220px 40px;
+    border-radius: 8px;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+}
+.box form h2{
+    color: rgb(255, 255, 255);
+    font-weight: 500;
+    text-align: center;
+    letter-spacing: 0.1rem;
+    margin-top: -10rem;
+}
+.box form .inputbox{
+    position: relative;
+    width: 300px;
+    margin-top: 35px;
+}
+.box form .inputbox input{
+    position: relative;
+    width:100%;
+    padding: 20px 10px 10px;
+    background: transparent;
+    outline: none;
+    border: none;
+    box-shadow:none;
+    color: #ffffff;
+    font-size: 1em;
+    letter-spacing: 0.05rem;
+    transition: 0.5s;
+    z-index: 10;
+}
+.box form .inputbox span{
+    position: absolute;
+    left: 0;
+    padding: 20px 10px 10px;
+    pointer-events: none;
+    color: antiquewhite;
+    font-size: 1em;
+    letter-spacing: 0.05em;
+    transition: 0.5s;
+}
+.box form .inputbox input:valid ~ span,
+.box form .inputbox input:focus ~ span{
+    color: whitesmoke;
+    font-size: 0.75em;
+    transform: translateY(-34px);
+}
+.box form .inputbox i {
+position: absolute;
+left: 0;
+bottom: 0;
+width: 100%;
+height: 2px;
+background: #ff3300ef;
+border-radius: 10px;
+overflow: hidden;
+transition: 0.5s;
+pointer-events: none;
+}
+.box form .inputbox input:valid ~ i,
+.box form .inputbox input:focus ~ i{
+height: 40px;  
+}
+
+.regi{
+font-size: 14px;
+margin-top: -1rem;    
+margin-left: 10rem;
+color: rgb(121, 120, 120);
+}
+ .regi:hover{
+    color: whitesmoke;
+}
+
+.box form .links{
+    margin-left: -12rem;
+    font-size: 14px;
+    justify-content: space-between;
+}
+.box form .links a{
+    margin: 20px 0;
+    color: rgb(121, 120, 120);
+    text-decoration: none;
+}
+.box form .links a:hover{
+    color: whitesmoke;
+}
+.box form input[type="submit"]{
+    color: #000000;
+    border: none;
+    outline: none;
+    padding: 9px 25px;
+    background: #fff;
+    cursor: pointer;
+    font-size: 0.9em;
+    border-radius: 4px;
+    font-weight: 600;
+    width: 100px;
+    margin-top: 10px;
+    margin-left: -12rem;
+}
+.g{
+    font-size: 0.9em;
+  margin-left: 10rem;
+    margin-top: 0.5rem;
+}
+.box form input[type="submit"]:active{
+    opacity: 0.8;
+}
+.box form input[type="submit"]:hover{
+    background-color: #ff1d1d;
+    box-shadow: 0 0 5px#ff1d1d9d;
+    color: rgb(12, 0, 0);
+}
+
+
+/*footer----------*/
+footer{
+    width: 100%;
+    bottom: 0;
+    background: linear-gradient(to right, #00093cef,#ec1000d2);
+    color: #fff;
+    padding: 100 0 30px;
+    margin-left:0 5rem;
+    font-size: 13px;
+    line-height: 20px;
+    font-family: 'Exo 2';
+    border-radius: 1px;
+  
+}
+.row{
+    width: 85%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+.col{
+    flex-basis: 25%;
+    padding: 10px;
+}
+p{
+    margin-left: -5rem;
+}
+.col p{
+margin-left: 0.1rem;
+}
+.col:nth-child(2), .col:nth-child(3){
+ flex-basis: 10%;   
+}
+.logo{
+    width: 150px;
+    margin-bottom: 30px;
+}
+.col h3{
+    width: fit-content;
+    margin-bottom: 10px;
+    position: relative;
+}
+.email-id{
+    width: fit-content;
+    border-bottom: 1px solid #ccc;
+    margin: 20px 0;
+}
+ul li{
+    list-style: none;
+    margin-bottom:12px;
+}
+ul li a{
+    text-decoration: none;
+    color: whitesmoke;
+}
+li .a:hover{
+    color: #ff1e1e;
+}
+form{
+    padding-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 50px;
+}
+form .bx{
+    font-size: 18px;
+    margin-right: 10px;
+}
+
+form input{
+    width: 100%;
+    background: transparent;
+    color: #ccc;
+    border: 0;
+    outline: none;
+}
+form button{
+    background: transparent;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+}
+form button .bx{
+    font-size: 20px;
+    color: #fdfcfc;
+
+}
+.social-icons h3{
+    margin-top: -2.3rem;
+}
+.social-icons .bx{
+    margin-top: 0.5rem;
+    margin-left: 1rem;
+    margin-bottom: 0.3rem;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    font-size: 20px;
+    color: #000000;
+    background: whitesmoke;
+    margin-right: 15px;
+    cursor: pointer;
+}
+.social-icons .bx:hover{
+    color: #f30c00;
+}
+hr{
+    width: 90%;
+    border: 0;
+    border-bottom: 1.6px solid #f8f8f8;
+    margin: 20px auto;
+}
+.copyright{
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: -1rem;
+}
+.underline{
+    width: 100%;
+    height: 5px;
+    background: #ffffff;
+    border-radius: 3px;
+    position: absolute;
+    top: 25px;
+    left: 0;
+    overflow: hidden;
+}
+.underline span{
+    width: 15px;
+    height: 100%;
+    background: #ff0000;
+    border-radius: 3px;
+    box-shadow: 0 0 1px white ;
+    position: absolute;
+    top: 0;
+    left: 10px;
+    animation: moving 2s linear infinite;  
+}
+@keyframes moving {
+    0%{
+        left: 0px;
+    }
+   100%{
+        left: 100px;
+    }
+    
+}
+
